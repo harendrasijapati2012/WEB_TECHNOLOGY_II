@@ -1,0 +1,35 @@
+<definitions name="StudentService" 
+    targetNamespace="http://example.com/student"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <message name="GetStudentRequest">
+        <part name="studentID" type="xsd:int"/>
+    </message>
+
+    <message name="GetStudentResponse">
+        <part name="studentName" type="xsd:string"/>
+    </message>
+
+    <portType name="StudentPort">
+        <operation name="GetStudent">
+            <input message="tns:GetStudentRequest"/>
+            <output message="tns:GetStudentResponse"/>
+        </operation>
+    </portType>
+
+    <binding name="StudentBinding" type="tns:StudentPort">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="GetStudent">
+            <soap:operation soapAction="http://example.com/student/GetStudent"/>
+        </operation>
+    </binding>
+
+    <service name="StudentService">
+        <port name="StudentPort" binding="tns:StudentBinding">
+            <soap:address location="http://example.com/studentService"/>
+        </port>
+    </service>
+
+</definitions>

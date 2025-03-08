@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Client-Side Scripting</title>
+</head>
+<body>
+
+    <form method="POST" action="server.php">
+        <input type="text" name="name" placeholder="Enter your name">
+        <input type="submit" value="Submit">
+    </form>
+    
+    <h1>Click the button to see a message</h1>
+    <button onclick="showMessage()">Click Me</button>
+
+    <script>
+        function showMessage() {
+            alert("Hello! This is Client-Side Scripting.");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <soapenv:Body>
+      <getStudentDetails>
+         <studentID>101</studentID>
+      </getStudentDetails>
+   </soapenv:Body>
+</soapenv:Envelope>
