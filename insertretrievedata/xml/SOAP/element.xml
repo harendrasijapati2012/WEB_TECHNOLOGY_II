@@ -1,0 +1,40 @@
+//soap envelope
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <soapenv:Header>...</soapenv:Header>
+   <soapenv:Body>...</soapenv:Body>
+</soapenv:Envelope>
+
+
+//soap header
+
+<soapenv:Header>
+    <authToken>123456</authToken>
+</soapenv:Header>
+
+
+//soap boady
+
+<soapenv:Body>
+    <getStudentDetails>
+        <studentID>101</studentID>
+    </getStudentDetails>
+</soapenv:Body>
+
+<soapenv:Body>
+    <getStudentDetailsResponse>
+        <name>John Doe</name>
+        <age>22</age>
+        <course>Computer Science</course>
+    </getStudentDetailsResponse>
+</soapenv:Body>
+
+//soap fault
+
+<soapenv:Body>
+    <soapenv:Fault>
+        <faultcode>SOAP-ENV:Client</faultcode>
+        <faultstring>Invalid request format</faultstring>
+        <detail>Missing student ID</detail>
+    </soapenv:Fault>
+</soapenv:Body>
+

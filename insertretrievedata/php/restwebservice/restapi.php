@@ -10,3 +10,4 @@ $students = [
 // Convert to JSON and Display
 echo json_encode($students);
 ?>
+        
